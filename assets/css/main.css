@@ -4017,3 +4017,55 @@ input, select, textarea {
 	transition: transform 0.05s ease-out;
 	mix-blend-mode: lighten; /* Creates a more subtle blending effect */
 }
+
+.profile-image {
+    position: absolute;
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    left: 10vw; /* Adjust for larger screens */
+    top: 50vh; /* Adjust for larger screens */
+	max-width: 100%;
+}
+
+.profile-image img {
+    width: 25vw; /* Adjust size for larger screens */
+    height: auto;
+    border-radius: 10%;
+    z-index: 10;
+}
+
+/* For small tablets and large mobile devices (768px and below) */
+@media screen and (max-width: 768px) {
+    .profile-image {
+        left: 5vw; /* Adjusted left margin for better alignment */
+        top: 40vh; /* Adjusted top position */
+    }
+
+    .profile-image img {
+        width: 30vw; /* Adjust size for medium screens (tablets) */
+    }
+}
+
+/* For mobile devices (small screens, 480px and below) */
+@media screen and (max-width: 480px) {
+    .profile-image {
+        left: 5vw; /* Center image on small mobile screens */
+        top: 30vh; /* Adjusted top position */
+    }
+
+    .profile-image img {
+        width: 30vw; /* Larger size for small mobile screens */
+    }
+}
+
+/* For extra-large screens (over 1440px wide) */
+@media screen and (min-width: 1441px) {
+    .profile-image {
+        left: 10vw; /* Adjust left margin for ultra-large screens */
+        top: 56vh; /* Adjust top for better positioning */
+    }
+
+    .profile-image img {
+        width: 25vw; /* Smaller size for extra-large screens */
+    }
+}
