@@ -2076,6 +2076,38 @@ input, select, textarea {
 
 			}
 
+		.icon.minor {
+			-moz-transform: rotate(-45deg);
+			-webkit-transform: rotate(-45deg);
+			-ms-transform: rotate(-45deg);
+			transform: rotate(0deg);
+			border-radius: 3px;
+			border: dashed 4px #ffffff93;
+			display: inline-block;
+			font-size: 1.35em;
+			height: calc(3em + 2px);
+			line-height: 3em;
+			text-align: center;
+			width: calc(3em + 2px);
+		}
+
+			.icon.minor:before {
+				-moz-transform: rotate(45deg);
+				-webkit-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(0deg);
+				display: inline-block;
+				font-size: 1.5em;
+			}
+
+			@media screen and (max-width: 736px) {
+
+				.icon.minor {
+					font-size: 1em;
+				}
+
+			}
+
 		.icon.style1 {
 			color: #00ffcc;
 		}
@@ -4047,7 +4079,7 @@ body.loaded .profile-image img {
 }
 
 /* For small tablets and large mobile devices (768px and below) */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 980px) {
     .profile-image {
         left: 5vw; /* Adjusted left margin for better alignment */
         top: 40vh; /* Adjusted top position */
