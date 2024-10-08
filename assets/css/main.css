@@ -4018,20 +4018,32 @@ input, select, textarea {
 	mix-blend-mode: lighten; /* Creates a more subtle blending effect */
 }
 
+body.is-preload .profile-image img {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+body.loaded .profile-image img {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Keep your existing image CSS */
 .profile-image {
     position: absolute;
-    width: 100vw; /* Full width of the viewport */
-    height: 100vh; /* Full height of the viewport */
-    left: 10vw; /* Adjust for larger screens */
-    top: 50vh; /* Adjust for larger screens */
-	max-width: 100%;
+    width: 100vw;
+    height: 100vh;
+    left: 10vw;
+    top: 50vh;
+    max-width: 100%;
 }
 
 .profile-image img {
-    width: 25vw; /* Adjust size for larger screens */
+    width: 25vw;
     height: auto;
     border-radius: 10%;
     z-index: 10;
+    transition: 1s all;
 }
 
 /* For small tablets and large mobile devices (768px and below) */
