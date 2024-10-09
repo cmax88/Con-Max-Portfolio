@@ -2109,15 +2109,27 @@ input, select, textarea {
 			}
 
 		.icon.style1 {
-			color: #00ffcc;
+			color: #ff7b00;
 		}
 
 		.icon.style2 {
-			color: #00f0ff;
+			color: #fbff00;
 		}
 
 		.icon.style3 {
-			color: #76ddff;
+			color: #0044ff;
+		}
+
+		.icon.style4 {
+			color: #d5fffb;
+		}
+
+		.icon.style5 {
+			color: #2a3781;
+		}
+
+		.icon.style6 {
+			color: #00ffdd;
 		}
 
 /* Image */
@@ -2716,6 +2728,20 @@ input, select, textarea {
 				width: 100%;
 			}
 
+		.spotlight .video {
+			-moz-order: 1;
+			-webkit-order: 1;
+			-ms-order: 1;
+			order: 1;
+			border-radius: 0;
+			width: 100%;
+		}
+
+			.spotlight .video video {
+				border-radius: 0;
+				width: 100%;
+			}
+
 		.spotlight .content {
 			padding: 2em 4em 0.1em 4em ;
 			-moz-order: 2;
@@ -3011,7 +3037,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style3 {
-			background-color: #269186;
+			background-color: #22756d;
 			color: #d3d4e4;
 		}
 
@@ -4079,7 +4105,7 @@ body.loaded .profile-image img {
 }
 
 /* For small tablets and large mobile devices (768px and below) */
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 844px) {
     .profile-image {
         left: 5vw; /* Adjusted left margin for better alignment */
         top: 40vh; /* Adjusted top position */
@@ -4094,7 +4120,7 @@ body.loaded .profile-image img {
 @media screen and (max-width: 480px) {
     .profile-image {
         left: 5vw; /* Center image on small mobile screens */
-        top: 30vh; /* Adjusted top position */
+        top: 36.5vh; /* Adjusted top position */
     }
 
     .profile-image img {
