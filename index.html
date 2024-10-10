@@ -7,6 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 	</head>
 	<body class="landing is-preload">
 		<div class="cursor-glow"></div>
@@ -27,6 +28,7 @@
 											<li><a href="#one" class="more scrolly">About Me</a></li>
 											<li><a href="#three" class="more scrolly">Experience</a></li>
 											<li><a href="#two" class="more scrolly">Projects</a></li>
+											<li><a href="#models" class="more scrolly">My Models</a></li>
 											<li><a href="#footer" class="more scrolly">Connect</a></li>
 										</ul>
 									</div>
@@ -146,6 +148,16 @@
 					</section>
 				</section>
 
+				<model-viewer id="models" src="/models/antenna-mount.glb" poster="../../assets/ShopifyModels/Chair.webp" shadow-intensity="1" ar camera-controls touch-action="pan-y" alt="A 3D model carousel" style="background-color: #21b2a6">
+					<div class="slider">
+						<div class="slides">
+						  <button class="slide selected" onclick="switchSrc(this, 'antenna-mount')" style="background-image: url('/models/screenshots/antenna-screenshot.png');"></button>
+						  <button class="slide" onclick="switchSrc(this, 'gopro-mount')" style="background-image: url('/models/screenshots/gopro-screenshot.png');"></button>
+						  <button class="slide" onclick="switchSrc(this, 'lipo-cage')" style="background-image: url('/models/screenshots/lipo-screenshot.png');"></button>
+						  </div>
+					</div>
+				</model-viewer>
+
 				<!-- Footer -->
 					<footer id="footer">
 						<ul class="icons">
@@ -168,6 +180,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/modelviewer.js"></script>
 
 	</body>
 </html>

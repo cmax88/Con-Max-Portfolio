@@ -2464,17 +2464,19 @@ input, select, textarea {
 		display: inline-block;
 		font-size: 0.8em;
 		font-weight: 600;
-		height: 3.125em;
+		height: 30vh;
+		width: 15vw;
 		letter-spacing: 0.225em;
 		line-height: 3.125em;
 		max-width: 30em;
-		padding: 0 2.75em;
+		padding: 0 2.37%;
 		text-align: center;
 		text-decoration: none;
 		text-transform: uppercase;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+		position:sticky;
 	}
 
 		input[type="submit"]:hover,
@@ -2482,7 +2484,7 @@ input, select, textarea {
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			background-color: rgba(144, 144, 144, 0.25);
+			background-color: rgb(255, 255, 255);
 		}
 
 		input[type="submit"]:active,
@@ -2563,6 +2565,50 @@ input, select, textarea {
 			pointer-events: none;
 			opacity: 0.25;
 		}
+
+		.slider {
+			width: 100%;
+			text-align: center;
+			overflow: hidden;
+			position: absolute;
+			bottom: 16px;
+		  }
+		
+		  .slides {
+			display: flex;
+			justify-content: center;
+			overflow-x: auto;
+			scroll-snap-type: x mandatory;
+			scroll-behavior: smooth;
+			-webkit-overflow-scrolling: touch;
+		  }
+		
+		  .slide {
+			scroll-snap-align: start;
+			flex-shrink: 0;
+			width: 100px;
+			height: 100px;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-color: #ffffff00;
+			margin-right: 10px;
+			border-radius: 10px;
+			border: none;
+			display: flex;
+		  }
+		
+		  .slide.selected {
+			border: 2px solid #4285f4;
+		  }
+		
+		  .slide:focus {
+			outline: none;
+		  }
+		
+		  .slide:focus-visible {
+			outline: 1px solid #4285f4;
+		  }
 
 		@media screen and (max-width: 736px) {
 
@@ -4138,4 +4184,10 @@ body.loaded .profile-image img {
     .profile-image img {
         width: 25vw; /* Smaller size for extra-large screens */
     }
+}
+
+model-viewer{
+	width:100vw;
+	height:95vh;
+	margin: 0 auto;
 }
