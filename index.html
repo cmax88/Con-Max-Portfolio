@@ -1,186 +1,536 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<link rel="icon" type="image/x-icon" href="/images/connor-favicon.png">
-		<title>Connor Maxwell</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
-	</head>
-	<body class="landing is-preload">
-		<div class="cursor-glow"></div>
-    		<script src="/assets/js/script.js"></script>
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Connor Maxwell</title>
+<meta name="theme-color" content="#020c0d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kumar+One&family=Kumar+One+Outline&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+*{box-sizing:border-box}
+html{background:#020c0d}
+body{margin:0;min-height:100vh;color:#e3f6f3}
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">Connor Maxwell | GIS</a></h1>
-						<nav id="nav">
-							<ul>
-								<li class="special">
-									<a href="#menu" class="menuToggle"><span>Menu</span></a>
-									<div id="menu">
-										<ul>
-											<li><a href="#banner" class="more scrolly">Intro</a></li>
-											<li><a href="#one" class="more scrolly">About Me</a></li>
-											<li><a href="#three" class="more scrolly">Experience</a></li>
-											<li><a href="#two" class="more scrolly">Projects</a></li>
-											<li><a href="#models" class="more scrolly">My Models</a></li>
-											<li><a href="#footer" class="more scrolly">Connect</a></li>
-										</ul>
-									</div>
-								</li>
-							</ul>
-						</nav>
-					</header>
+/* ---------- blacklight terrain background ---------- */
+#world,#glow{position:fixed;left:0;top:0;image-rendering:pixelated;image-rendering:crisp-edges;pointer-events:none}
+#world{z-index:-2}
+#glow{z-index:-1;filter:blur(8px);opacity:.25;mix-blend-mode:screen}
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<h2>Hi, My Name is <br><span style="color: #21b2a6;">Connor</span> Maxwell</h2>
-							<p>3<sub>rd</sub> year Geography student 
-								<br>at <b><a href="https://www.sru.edu/"><span style="color: #21b2a6;">Slippery Rock University</span></a></b></p>
-						</div>
-						<a href="#one" class="more scrolly">About Me</a>
-					</section>
+/* ---------- title screen ---------- */
+.title{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 16px}
+.title::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 50% 38% at 50% 50%,rgba(2,12,13,.75),rgba(2,12,13,.3) 65%,transparent 90%)}
+.name{position:relative;margin:0;font-family:"Kumar One Outline","Kumar One",system-ui,sans-serif;font-weight:400;font-size:clamp(2.6rem,7vw,5.6rem);line-height:1.02;letter-spacing:.01em;text-transform:lowercase;color:#d8f3ee;
+  text-shadow:0 0 24px rgba(60,180,165,.25)}
+.name span{display:block}
+.role{position:relative;margin:22px 0 0;font-family:"Kumar One",system-ui,sans-serif;font-weight:400;font-size:clamp(.95rem,1.7vw,1.25rem);line-height:1.2;letter-spacing:.22em;padding-left:.22em;text-transform:lowercase;color:rgba(170,225,215,.7)}
 
-				<div class="profile-image">
-					<img src="images/connor.png" alt="Me!!">
-				</div>		
-				<!-- One -->
+@media (prefers-reduced-motion:no-preference){
+  .name{animation:fadein 1.4s ease both}
+    .role{animation:fadein 1.2s .7s ease both}
+}
+@keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 
-				<section id="one" class="wrapper style1 special">
-						<div class="inner">
-							<header class="major">
-								<h2>A Little About Me</h2>
-								<p>Welcome and thanks for checking out my site!<br>I'm a passionate map enthusiast currently pursuing a BS in Geography with a concentration in Geospatial Technology at Slippery Rock University. I have a strong love for 3D printing and enjoy spending my free time as a recreational 3D modeler and coder. I'm always eager to dive into new skills—whether it's mastering a new cartographic technique or exploring the latest coding languages. For me, learning is all about creating something visually engaging and structurally unique.</p>
-							</header>
-							<ul class="icons major">
-								<li><a href="https://github.com/cmax88" target="_blank"><span class="icon brands fa-github major style4"><span class="label">Lorem</span></span></a></li>
-								<li><a href="https://www.linkedin.com/in/connor-maxwell-212184273/" target="_blank"><span class="icon brands fa-linkedin major style5"><span class="label">Ipsum</span></span></a></li>
-								<li><a href="mailto:cjmax88@gmail.com"><span class="icon fa-envelope major style6"><span class="label">Dolor</span></span></a></li>
-							</ul>
-						</div>
-					</section>
 
-				<!-- Three -->
-					<section id="three" class="wrapper style3 special">
-						<div class="inner">
-							<header class="major">
-								<h2>Experience</h2>
-							</header>
-							<ul class="features">
-								<li class="icon solid fa-oil-can">
-									<h3>Petrotek Engineering Corporation</h3>
-									<h6><span style="color: #00ffcc;">May 2024 - July 2024</span></h6>
-									<p>Worked as an intern for <span style="color: #00ffcc;"><a href="https://petrotek.com/">Petrotek</a></span> in Littleton, CO as a GIS Specialist. Made maps and permits related to injection wells for companies in Michigan, Ohio, Indiana, Illinois, Colorado, Wyoming, and Texas.</p>
-								</li>
-								<li class="icon solid fa-globe">
-									<h3>Slippery Rock University</h3>
-									<h6><span style="color: #00ffcc;">November 2022 - Present</span></h6>
-									<p>Currently working as a Student Web Developer at SRU. We work on maintaining the <span style="color: #00ffcc;"><a href="https://www.sru.edu/">sru.edu</a></span> site. I also interned here in the summer of 2023.</p>
-								</li>
-								<li class="icon solid fa-school">
-									<h3>Started College at SRU</h3>
-									<h6><span style="color: #00ffcc;">August 2022</span></h6>
-									<p>Revived my academic career after realizing constuction was not the play. Go Rock!</p>
-								</li>
-								<li class="icon solid fa-hammer">
-									<h3>Giordano Construction</h3>
-									<h6><span style="color: #00ffcc;">November 2021 - June 2022</span></h6>
-									<p>Worked as a general laborer for Giordano Construction after highschool. Learned many valuable skills during my short time there.</p>
-								</li>
-								<li class="icon solid fa-graduation-cap">
-									<h3>Graduated Highschool</h3>
-									<h6><span style="color: #00ffcc;">May 2021</span></h6>
-									<p>Finished at Lakeview High School in Stoneboro, PA.</p>
-								</li>
-							</ul>
-						</div>
-					</section>
-					
-				<!-- Two -->
-				<section id="two" class="wrapper alt style2">
-					<section class="spotlight">
-						<div class="image"><img src="images/portfolio.png" alt="" /></div><div class="content">
-							<h2><span style="color: #00ffcc;">Portfolio Site</span></h2>
-							<p>Started this <span style="color: #00ffcc;"><a href="#banner" class="more scrolly">portfolio page</a></span> with a template and began adding transitions, sections, and images through the use of HTML5, JavaScript, and CSS. This website is being hosted on Vercel.</p>
-							<a href="https://github.com/cmax88/Con-Max-Portfolio" class="icon brands fa-github minor style4"><span class="label">GitHub</span></a>
-							<a class="icon brands fa-html5 minor style1"><span class="label">HTML5</span></a>
-							<a class="icon brands fa-js minor style2"><span class="label">JavaScript</span></a>
-							<a class="icon brands fa-css3 minor style3"><span class="label">CSS3</span></a>
-						</div>
-					</section>
-					<section class="spotlight">
-						<div class="image"><img src="images/wedding-map.png" alt="" /></div><div class="content">
-							<h2><span style="color: #00ffcc;">"Our Journey" Map</span></h2>
-							<p>Crafted a wedding map for my brother of places him and his wife had lived throughout the years. Created using ArcGIS for the base map and points, and Illustrator for the paths and symbols.</p>
-							<img src="images/arcgis.webp" class="icon brands fa-css3 minor style2"><span class="label"></span></img>
-							<img src="images/adobe.png" class="icon brands fa-css3 minor style2"><span class="label"></span></img>
-						</div>
-					</section>
-					<section class="spotlight">
-						<div class="video">
-						<video width="748" height="529" autoplay loop muted playsinline>
-								<source src="/vids/talesgif.mp4" type="video/mp4">
-							</video>
-						</div>
-						<div class="content">
-							<h2><span style="color: #00ffcc;">A Tale of Two Ales</span></h2>
-							<p>Created a fun, <span style="color: #00ffcc;"><a href="https://www.myfrienddrankabeerandthendrankanotherbeer.college/">interactive website</a></span> based on an inside joke amongst friends. The site has unique effects throughout, created using lots of Javascript and CSS to make it pretty. It is also hosted on Vercel.</p>
-							<a href="https://github.com/cmax88/A-Tale-of-Two-Ales" class="icon brands fa-github minor style4"><span class="label">GitHub</span></a>
-							<a class="icon brands fa-html5 minor style1"><span class="label">HTML5</span></a>
-							<a class="icon brands fa-js minor style2"><span class="label">JavaScript</span></a>
-							<a class="icon brands fa-css3 minor style3"><span class="label">CSS3</span></a>
-						</div>
-					</section>
-					<section class="spotlight">
-						<div class="image"><img src="images/drone.png" alt="" /></div><div class="content">
-							<h2><span style="color: #00ffcc;">FPV Drone Project</span></h2>
-							<p>After getting my commercial drone pilots license, I decided to build a FPV drone from scratch. This project utilized my skills in AutoCAD, creating models for the drone's construction, and in BetaFlight, configuring the drone after completion. Flashprint software was used to slice the models.</p>
-							<img src="images/betaflight.svg" class="icon brands fa-css3 minor style2"><span class="label"></span></img>
-							<img src="images/autocad.png" class="icon brands fa-css3 minor style2"><span class="label"></span></img>
-							<img src="images/flashprint.png" class="icon brands fa-css3 minor style2"><span class="label"></span></img>
-						</div>
-					</section>
-				</section>
 
-				<model-viewer id="models" src="/models/antenna-mount.glb" poster="../../assets/ShopifyModels/Chair.webp" shadow-intensity="1" ar camera-controls touch-action="pan-y" alt="A 3D model carousel" style="background-color: #21b2a6">
-					<div class="slider">
-						<div class="slides">
-						  <button class="slide selected" onclick="switchSrc(this, 'antenna-mount')" style="background-image: url('/models/screenshots/antenna-screenshot.png');"></button>
-						  <button class="slide" onclick="switchSrc(this, 'gopro-mount')" style="background-image: url('/models/screenshots/gopro-screenshot.png');"></button>
-						  <button class="slide" onclick="switchSrc(this, 'lipo-cage')" style="background-image: url('/models/screenshots/lipo-screenshot.png');"></button>
-						  </div>
-					</div>
-				</model-viewer>
+/* ---------- scroll indicator ---------- */
+.scroll{position:absolute;left:0;right:0;margin:0 auto;width:max-content;bottom:34px;display:flex;flex-direction:column;align-items:center;gap:10px;font-family:"Montserrat",system-ui,sans-serif;font-weight:400;font-size:clamp(.85rem,1.4vw,1rem);letter-spacing:.08em;text-transform:lowercase;color:rgba(150,215,205,.6);text-decoration:none;transition:color .3s}
+.scroll:hover,.scroll:focus-visible{color:rgba(200,240,232,.9);outline:none}
+.scroll svg{width:22px;height:28px;image-rendering:pixelated}
+@media (prefers-reduced-motion:no-preference){
+  .scroll{animation:fadein 1.2s 1.4s ease both}
+  .scroll svg{animation:nudge 2s 2.6s ease-in-out infinite}
+}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="icons">
-							<li><a href="https://github.com/cmax88" class="icon brands fa-github"><span class="label">Instagram</span></a></li>
-							<li><a href="https://www.linkedin.com/in/connor-maxwell-212184273/" class="icon brands fa-linkedin"><span class="label">Dribbble</span></a></li>
-							<li><a href="mailto:cjmax88@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
-						<ul class="copyright">
-							<li>&copy; Connor Maxwell</li>
-						</ul>
-					</footer>
+/* ---------- logo ---------- */
+.logo{position:fixed;top:20px;left:26px;z-index:5;font-family:"Kumar One",system-ui,sans-serif;font-size:34px;line-height:1;letter-spacing:.02em;text-decoration:none;color:rgba(130,222,205,.85);transition:color .3s}
+.logo:hover,.logo:focus-visible{color:#c8f3ea;outline:none}
+@media (max-width:600px){.logo{top:16px;left:16px;font-size:28px}}
+@media (prefers-reduced-motion:no-preference){.logo{animation:fadein 1.2s 1s ease both}}
 
-			</div>
+/* ---------- about / intro ---------- */
+.about{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:100px 24px;scroll-margin-top:0;
+  background:linear-gradient(180deg,transparent 0,rgba(2,12,13,.7) 30%,rgba(2,12,13,.7) 100%)}
+.about-inner{width:100%;max-width:1040px;display:grid;grid-template-columns:340px 1fr;gap:64px;align-items:center}
+.about-photo{margin:0;display:flex;justify-content:center}
+.about-photo img{width:340px;height:auto;image-rendering:pixelated;image-rendering:crisp-edges;filter:grayscale(1) sepia(.55) hue-rotate(125deg) saturate(1.25) brightness(.95) contrast(1.05) drop-shadow(0 18px 30px rgba(0,0,0,.45))}
+.about-text{min-width:0}
+@media (max-width:860px){
+  .about-inner{grid-template-columns:1fr;gap:36px;max-width:640px}
+  .about-photo img{width:min(220px,55vw)}
+}
+html.js .about-photo{opacity:0;transform:translateY(14px);transition:opacity 1s ease,transform 1s ease}
+html.js .about-photo.in{opacity:1;transform:none}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="assets/js/modelviewer.js"></script>
+.about-inner p{margin:0 0 1.15em;font-family:"Montserrat",system-ui,sans-serif;font-weight:300;font-size:clamp(1.02rem,1.6vw,1.18rem);line-height:1.75;color:rgba(205,236,230,.82)}
+.about-inner p:first-child{font-size:clamp(1.25rem,2.2vw,1.55rem);line-height:1.5;color:#d8f3ee}
+.about-inner p:last-child{margin-bottom:0}
+.about-inner b{font-family:"Kumar One",system-ui,sans-serif;font-weight:400;font-size:.94em;letter-spacing:.02em;color:#c8f3ea}
+html.js .about-inner p{opacity:0;transform:translateY(10px);transition:opacity .9s ease,transform .9s ease}
+html.js .about-inner p.in{opacity:1;transform:none}
 
-	</body>
+
+/* "this is me!" doodle */
+.photo-wrap{position:relative;display:inline-block;line-height:0}
+.this-me{position:absolute;left:calc(50% - clamp(9px,1.1vw,14px));bottom:calc(100% + 4px);display:flex;align-items:flex-start;gap:8px;line-height:1;color:#9fe9da;pointer-events:none}
+.this-me span{display:block;margin-top:2px;font-family:"Kumar One",system-ui,sans-serif;font-size:clamp(.8rem,1.35vw,1rem);letter-spacing:.03em;white-space:nowrap;text-transform:lowercase;text-shadow:0 2px 10px rgba(2,12,13,.95)}
+.this-me svg{display:block;flex:none;width:clamp(18px,2.2vw,28px);height:auto;image-rendering:pixelated;filter:drop-shadow(0 2px 6px rgba(2,12,13,.9))}
+@media (prefers-reduced-motion:no-preference){
+  .this-me svg{animation:bob 1.4s steps(2) infinite}
+}
+@keyframes bob{50%{transform:translateY(-4px)}}
+
+.about-head{grid-column:1/-1;margin:0 0 28px;text-align:center;font-family:"Kumar One",system-ui,sans-serif;font-weight:400;font-size:clamp(2rem,4.6vw,3.4rem);line-height:1.05;letter-spacing:.01em;text-transform:lowercase;color:#d8f3ee;text-shadow:0 0 24px rgba(60,180,165,.2)}
+@media (max-width:860px){.about-head{margin-bottom:24px;text-align:center}}
+html.js .about-head{opacity:0;transform:translateY(10px);transition:opacity .9s ease,transform .9s ease}
+html.js .about-head.in{opacity:1;transform:none}
+
+/* ---------- section divider: dotted pixel line ---------- */
+.divider{position:absolute;top:44px;left:0;right:0;margin:0 auto;width:min(900px,86vw);display:block;line-height:0;pointer-events:none;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent);mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent)}
+.divider svg{display:block;width:100%;height:auto}
+.divider .base{fill:rgba(140,225,210,.45)}
+html.js .divider{opacity:0;transition:opacity 1.2s ease}
+html.js .divider.in{opacity:1}
+
+/* ---------- shared section layout ---------- */
+.sec{position:relative;padding:150px 24px 90px;background:rgba(2,12,13,.7)}
+.sec-inner{max-width:760px;margin:0 auto}
+.sec-inner.wide{max-width:1080px}
+.sec-head{margin:0 0 56px;text-align:center;font-family:"Kumar One",system-ui,sans-serif;font-weight:400;font-size:clamp(2rem,4.6vw,3.4rem);line-height:1.05;letter-spacing:.01em;text-transform:lowercase;color:#d8f3ee;text-shadow:0 0 24px rgba(60,180,165,.2)}
+html.js .reveal{opacity:0;transform:translateY(12px);transition:opacity .9s ease,transform .9s ease}
+html.js .reveal.in{opacity:1;transform:none}
+
+/* ---------- experience timeline ---------- */
+.timeline{list-style:none;margin:0;padding:0 0 0 54px;position:relative}
+.timeline::before{content:"";position:absolute;left:13px;top:10px;bottom:10px;width:3px;
+  background:repeating-linear-gradient(180deg,rgba(140,225,210,.4) 0 3px,transparent 3px 7px)}
+.job{position:relative;margin:0 0 46px}
+.job:last-child{margin-bottom:0}
+.job-pin{position:absolute;left:-54px;top:-2px;width:30px;display:flex;justify-content:center;color:rgba(120,200,190,.55)}
+.job-pin svg{width:17px;height:auto;image-rendering:pixelated;filter:drop-shadow(0 0 4px rgba(2,12,13,1))}
+.job.now .job-pin{color:#9fe9da}
+.job.now .job-pin svg{width:22px}
+@media (prefers-reduced-motion:no-preference){.job.now .job-pin svg{animation:bob 1.4s steps(2) infinite}}
+.job-date{margin:0 0 6px;font-family:"Kumar One",system-ui,sans-serif;font-size:.85rem;letter-spacing:.06em;text-transform:lowercase;color:rgba(150,215,205,.65)}
+.job.now .job-date{color:#9fe9da}
+.job-title{margin:0;font-family:"Kumar One",system-ui,sans-serif;font-weight:400;font-size:clamp(1.3rem,2.4vw,1.65rem);line-height:1.2;text-transform:lowercase;color:#d8f3ee}
+.job-org{margin:4px 0 10px;font-family:"Montserrat",system-ui,sans-serif;font-weight:400;font-size:1rem;color:rgba(170,225,215,.75)}
+.job-desc{margin:0;font-family:"Montserrat",system-ui,sans-serif;font-weight:300;font-size:clamp(1rem,1.5vw,1.08rem);line-height:1.7;color:rgba(205,236,230,.78)}
+
+/* ---------- project list ---------- */
+.projects{list-style:none;margin:0;padding:0;border-top:1px solid rgba(120,200,190,.16)}
+.proj{display:grid;grid-template-columns:44px 1fr auto;gap:18px;align-items:center;padding:26px 6px;border-bottom:1px solid rgba(120,200,190,.16);transition:background .3s}
+.proj:hover{background:rgba(120,200,190,.04)}
+.proj-num{font-family:"Kumar One",system-ui,sans-serif;font-size:.85rem;color:rgba(150,215,205,.5);align-self:start;padding-top:6px}
+.proj-title{margin:0 0 6px;font-family:"Kumar One",system-ui,sans-serif;font-weight:400;font-size:clamp(1.25rem,2.3vw,1.55rem);line-height:1.2;text-transform:lowercase;color:#d8f3ee}
+.proj-sum{margin:0 0 12px;font-family:"Montserrat",system-ui,sans-serif;font-weight:300;font-size:1.02rem;line-height:1.6;color:rgba(205,236,230,.78)}
+.proj-tags{margin:0;display:flex;flex-wrap:wrap;gap:6px}
+.proj-tags span{font-family:"Montserrat",system-ui,sans-serif;font-weight:400;font-size:.76rem;letter-spacing:.04em;color:rgba(170,225,215,.8);border:1px solid rgba(120,200,190,.25);border-radius:3px;padding:3px 8px}
+.proj-more{cursor:pointer;background:none;border:1px solid rgba(140,225,210,.35);border-radius:4px;padding:9px 14px;font-family:"Kumar One",system-ui,sans-serif;font-size:.85rem;letter-spacing:.03em;color:#9fe9da;white-space:nowrap;transition:background .2s,border-color .2s,color .2s}
+.proj-more span{display:inline-block;transition:transform .2s}
+.proj-more:hover,.proj-more:focus-visible{background:rgba(140,225,210,.1);border-color:#9fe9da;color:#d8f3ee;outline:none}
+.proj-more:hover span,.proj-more:focus-visible span{transform:translateX(3px)}
+@media (max-width:600px){
+  .sec{padding:130px 20px 70px}
+  .proj{grid-template-columns:1fr;gap:10px;padding:22px 2px}
+  .proj-num{padding:0}
+  .proj-more{justify-self:start;margin-top:4px}
+}
+
+/* ---------- project modal ---------- */
+.modal{width:min(640px,calc(100vw - 32px));max-height:calc(100vh - 48px);padding:0;border:1px solid rgba(140,225,210,.3);border-radius:8px;background:#041416;color:#d8f3ee;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.modal::backdrop{background:rgba(1,8,9,.72);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.modal[open]{animation:modalIn .3s ease}
+@keyframes modalIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.modal-content{padding:34px 34px 32px}
+.modal-close{position:absolute;top:12px;right:14px;z-index:1;width:36px;height:36px;cursor:pointer;background:none;border:1px solid transparent;border-radius:4px;font:300 1.8rem/1 "Montserrat",system-ui,sans-serif;color:rgba(170,225,215,.75)}
+.modal-close:hover,.modal-close:focus-visible{border-color:rgba(140,225,210,.35);color:#d8f3ee;outline:none}
+.modal-art{height:120px;margin:-34px -34px 26px;display:grid;place-items:center;border-bottom:1px solid rgba(120,200,190,.14);background:radial-gradient(rgba(120,200,190,.16) 1.2px,transparent 1.3px) 0 0/12px 12px,rgba(2,12,13,.6)}
+.modal-art .icon{width:72px;height:auto;fill:rgba(120,200,190,.65);image-rendering:pixelated}
+.modal-art .icon .hi{fill:#9fe9da}
+.modal-title{margin:0 0 12px;font-family:"Kumar One",system-ui,sans-serif;font-weight:400;font-size:clamp(1.5rem,3vw,2rem);line-height:1.15;text-transform:lowercase}
+.modal-body{margin-top:22px}
+.modal-body p{margin:0 0 1em;font-family:"Montserrat",system-ui,sans-serif;font-weight:300;font-size:1.05rem;line-height:1.75;color:rgba(205,236,230,.85)}
+.modal-links{display:flex;flex-wrap:wrap;gap:20px;margin-top:22px!important}
+.modal-links a{font-family:"Kumar One",system-ui,sans-serif;font-weight:400;font-size:.9rem;color:#9fe9da;text-decoration:none;border-bottom:1px solid rgba(159,233,218,.35)}
+.modal-links a:hover,.modal-links a:focus-visible{border-bottom-color:#9fe9da;outline:none}
+@media (max-width:600px){.modal-content{padding:30px 22px 26px}.modal-art{margin:-30px -22px 22px}}
+
+/* ---------- contact ---------- */
+.contact{text-align:center;padding-bottom:110px}
+.contact-mail{display:inline-flex;align-items:center;flex-wrap:wrap;justify-content:center;gap:14px;margin:0 0 30px}
+.contact-pin{width:17px;height:auto;fill:#9fe9da;image-rendering:pixelated}
+@media (prefers-reduced-motion:no-preference){.contact-pin{animation:bob 1.4s steps(2) infinite}}
+.contact-mail a{font-family:"Kumar One",system-ui,sans-serif;font-size:clamp(1rem,2vw,1.25rem);letter-spacing:.01em;color:#d8f3ee;text-decoration:none;background:linear-gradient(#9fe9da,#9fe9da) 0 100%/0 2px no-repeat;padding-bottom:4px;transition:background-size .35s,color .3s}
+.contact-mail a:hover,.contact-mail a:focus-visible{background-size:100% 2px;color:#fff;outline:none}
+.copy{cursor:pointer;background:none;border:1px solid rgba(140,225,210,.35);border-radius:4px;padding:7px 12px;font-family:"Kumar One",system-ui,sans-serif;font-size:.8rem;letter-spacing:.03em;color:#9fe9da;transition:background .2s,border-color .2s}
+.copy:hover,.copy:focus-visible{background:rgba(140,225,210,.1);border-color:#9fe9da;outline:none}
+.contact-links{list-style:none;margin:0;padding:0;display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.contact-links a{display:inline-block;font-family:"Kumar One",system-ui,sans-serif;font-size:.95rem;letter-spacing:.03em;color:#9fe9da;text-decoration:none;border:1px solid rgba(140,225,210,.35);border-radius:4px;padding:10px 18px;transition:background .2s,border-color .2s,color .2s}
+.contact-links a:hover,.contact-links a:focus-visible{background:rgba(140,225,210,.1);border-color:#9fe9da;color:#d8f3ee;outline:none}
+.foot{background:rgba(2,12,13,.7);text-align:center;padding:0 20px 40px;font-family:"Montserrat",system-ui,sans-serif;font-weight:300;font-size:.82rem;letter-spacing:.04em;color:rgba(150,215,205,.5)}
+</style>
+</head>
+<body>
+<canvas id="world" aria-hidden="true"></canvas>
+<canvas id="glow" aria-hidden="true"></canvas>
+
+<a class="logo" href="#title" aria-label="Connor Maxwell, home">cm</a>
+
+<header class="title" id="title">
+  <h1 class="name"><span>Connor</span><span>Maxwell</span></h1>
+  <p class="role">GIS Analyst</p>
+  <a class="scroll" href="#about" id="scrollDown">
+    <span>who is this fella?</span>
+    <svg class="pin" viewBox="0 0 11 14" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><rect x="3" y="0" width="5" height="1"/><rect x="1" y="1" width="9" height="1"/><rect x="1" y="2" width="9" height="1"/><rect x="0" y="3" width="4" height="1"/><rect x="7" y="3" width="4" height="1"/><rect x="0" y="4" width="3" height="1"/><rect x="8" y="4" width="3" height="1"/><rect x="0" y="5" width="3" height="1"/><rect x="8" y="5" width="3" height="1"/><rect x="0" y="6" width="4" height="1"/><rect x="7" y="6" width="4" height="1"/><rect x="1" y="7" width="9" height="1"/><rect x="1" y="8" width="9" height="1"/><rect x="2" y="9" width="7" height="1"/><rect x="3" y="10" width="5" height="1"/><rect x="4" y="11" width="3" height="1"/><rect x="4" y="12" width="3" height="1"/><rect x="5" y="13" width="1" height="1"/></svg>
+  </a>
+</header>
+
+<!-- ============ ABOUT / INTRO (short bio goes here) ============ -->
+<section class="about" id="about" aria-label="About">
+  <div class="divider" aria-hidden="true"><svg viewBox="0 0 150 1" shape-rendering="crispEdges"><g class="base"><rect x="0" y="0" width="1" height="1"/><rect x="2" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="6" y="0" width="1" height="1"/><rect x="8" y="0" width="1" height="1"/><rect x="10" y="0" width="1" height="1"/><rect x="12" y="0" width="1" height="1"/><rect x="14" y="0" width="1" height="1"/><rect x="16" y="0" width="1" height="1"/><rect x="18" y="0" width="1" height="1"/><rect x="20" y="0" width="1" height="1"/><rect x="22" y="0" width="1" height="1"/><rect x="24" y="0" width="1" height="1"/><rect x="26" y="0" width="1" height="1"/><rect x="28" y="0" width="1" height="1"/><rect x="30" y="0" width="1" height="1"/><rect x="32" y="0" width="1" height="1"/><rect x="34" y="0" width="1" height="1"/><rect x="36" y="0" width="1" height="1"/><rect x="38" y="0" width="1" height="1"/><rect x="40" y="0" width="1" height="1"/><rect x="42" y="0" width="1" height="1"/><rect x="44" y="0" width="1" height="1"/><rect x="46" y="0" width="1" height="1"/><rect x="48" y="0" width="1" height="1"/><rect x="50" y="0" width="1" height="1"/><rect x="52" y="0" width="1" height="1"/><rect x="54" y="0" width="1" height="1"/><rect x="56" y="0" width="1" height="1"/><rect x="58" y="0" width="1" height="1"/><rect x="60" y="0" width="1" height="1"/><rect x="62" y="0" width="1" height="1"/><rect x="64" y="0" width="1" height="1"/><rect x="66" y="0" width="1" height="1"/><rect x="68" y="0" width="1" height="1"/><rect x="70" y="0" width="1" height="1"/><rect x="72" y="0" width="1" height="1"/><rect x="74" y="0" width="1" height="1"/><rect x="76" y="0" width="1" height="1"/><rect x="78" y="0" width="1" height="1"/><rect x="80" y="0" width="1" height="1"/><rect x="82" y="0" width="1" height="1"/><rect x="84" y="0" width="1" height="1"/><rect x="86" y="0" width="1" height="1"/><rect x="88" y="0" width="1" height="1"/><rect x="90" y="0" width="1" height="1"/><rect x="92" y="0" width="1" height="1"/><rect x="94" y="0" width="1" height="1"/><rect x="96" y="0" width="1" height="1"/><rect x="98" y="0" width="1" height="1"/><rect x="100" y="0" width="1" height="1"/><rect x="102" y="0" width="1" height="1"/><rect x="104" y="0" width="1" height="1"/><rect x="106" y="0" width="1" height="1"/><rect x="108" y="0" width="1" height="1"/><rect x="110" y="0" width="1" height="1"/><rect x="112" y="0" width="1" height="1"/><rect x="114" y="0" width="1" height="1"/><rect x="116" y="0" width="1" height="1"/><rect x="118" y="0" width="1" height="1"/><rect x="120" y="0" width="1" height="1"/><rect x="122" y="0" width="1" height="1"/><rect x="124" y="0" width="1" height="1"/><rect x="126" y="0" width="1" height="1"/><rect x="128" y="0" width="1" height="1"/><rect x="130" y="0" width="1" height="1"/><rect x="132" y="0" width="1" height="1"/><rect x="134" y="0" width="1" height="1"/><rect x="136" y="0" width="1" height="1"/><rect x="138" y="0" width="1" height="1"/><rect x="140" y="0" width="1" height="1"/><rect x="142" y="0" width="1" height="1"/><rect x="144" y="0" width="1" height="1"/><rect x="146" y="0" width="1" height="1"/><rect x="148" y="0" width="1" height="1"/></g></svg></div>
+  <div class="about-inner">
+    <h2 class="about-head">i&rsquo;ll tell ya...</h2>
+    <figure class="about-photo"><span class="photo-wrap"><img src="data:image/png;base64,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" width="120" height="252" alt="Connor Maxwell sitting and smiling, in a quarter-zip sweater, chinos and boots"><span class="this-me" aria-hidden="true"><svg viewBox="0 0 11 14" fill="currentColor" shape-rendering="crispEdges"><rect x="3" y="0" width="5" height="1"/><rect x="1" y="1" width="9" height="1"/><rect x="1" y="2" width="9" height="1"/><rect x="0" y="3" width="4" height="1"/><rect x="7" y="3" width="4" height="1"/><rect x="0" y="4" width="3" height="1"/><rect x="8" y="4" width="3" height="1"/><rect x="0" y="5" width="3" height="1"/><rect x="8" y="5" width="3" height="1"/><rect x="0" y="6" width="4" height="1"/><rect x="7" y="6" width="4" height="1"/><rect x="1" y="7" width="9" height="1"/><rect x="1" y="8" width="9" height="1"/><rect x="2" y="9" width="7" height="1"/><rect x="3" y="10" width="5" height="1"/><rect x="4" y="11" width="3" height="1"/><rect x="4" y="12" width="3" height="1"/><rect x="5" y="13" width="1" height="1"/></svg><span>this is me!</span></span></span></figure>
+    <div class="about-text">
+      <p>hello, my name is <b>connor maxwell</b> and i am a professional gis analyst and an unprofessional web developer.</p>
+      <p>i like to create clean and simple maps, diagrams, illustrations, and websites, both for myself and for my work. i have mapping experience in <b>arcgis</b>, <b>qgis</b>, and <b>surfer</b>, and graphic experience in <b>illustrator</b>, <b>photoshop</b>, and <b>blender</b>. my coding experience is in <b>html</b>, <b>javascript</b>, and <b>python</b>.</p>
+      <p>i graduated from slippery rock university with a b.s. in geographic information technology in december of 2025, where i learned a great deal of gis and spatial analysis techniques. my coding experience comes from a few classes i took while enrolled and my job as a student web dev at slip (short for slippery rock, btw).</p>
+      <p>i spend my free time writing and producing electronic music (mainly riddim/future riddim, if that means anything to you) under the stage name <b>&ldquo;malaka&rdquo;</b>. i&rsquo;ve also been writing an ancient greek inspired dnd campaign for the last 5 years called <b>&ldquo;echoes of the gods&rdquo;</b>. who knows if it will ever be finished.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="sec" id="work" aria-labelledby="work-title">
+  <div class="divider" aria-hidden="true"><svg viewBox="0 0 150 1" shape-rendering="crispEdges"><g class="base"><rect x="0" y="0" width="1" height="1"/><rect x="2" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="6" y="0" width="1" height="1"/><rect x="8" y="0" width="1" height="1"/><rect x="10" y="0" width="1" height="1"/><rect x="12" y="0" width="1" height="1"/><rect x="14" y="0" width="1" height="1"/><rect x="16" y="0" width="1" height="1"/><rect x="18" y="0" width="1" height="1"/><rect x="20" y="0" width="1" height="1"/><rect x="22" y="0" width="1" height="1"/><rect x="24" y="0" width="1" height="1"/><rect x="26" y="0" width="1" height="1"/><rect x="28" y="0" width="1" height="1"/><rect x="30" y="0" width="1" height="1"/><rect x="32" y="0" width="1" height="1"/><rect x="34" y="0" width="1" height="1"/><rect x="36" y="0" width="1" height="1"/><rect x="38" y="0" width="1" height="1"/><rect x="40" y="0" width="1" height="1"/><rect x="42" y="0" width="1" height="1"/><rect x="44" y="0" width="1" height="1"/><rect x="46" y="0" width="1" height="1"/><rect x="48" y="0" width="1" height="1"/><rect x="50" y="0" width="1" height="1"/><rect x="52" y="0" width="1" height="1"/><rect x="54" y="0" width="1" height="1"/><rect x="56" y="0" width="1" height="1"/><rect x="58" y="0" width="1" height="1"/><rect x="60" y="0" width="1" height="1"/><rect x="62" y="0" width="1" height="1"/><rect x="64" y="0" width="1" height="1"/><rect x="66" y="0" width="1" height="1"/><rect x="68" y="0" width="1" height="1"/><rect x="70" y="0" width="1" height="1"/><rect x="72" y="0" width="1" height="1"/><rect x="74" y="0" width="1" height="1"/><rect x="76" y="0" width="1" height="1"/><rect x="78" y="0" width="1" height="1"/><rect x="80" y="0" width="1" height="1"/><rect x="82" y="0" width="1" height="1"/><rect x="84" y="0" width="1" height="1"/><rect x="86" y="0" width="1" height="1"/><rect x="88" y="0" width="1" height="1"/><rect x="90" y="0" width="1" height="1"/><rect x="92" y="0" width="1" height="1"/><rect x="94" y="0" width="1" height="1"/><rect x="96" y="0" width="1" height="1"/><rect x="98" y="0" width="1" height="1"/><rect x="100" y="0" width="1" height="1"/><rect x="102" y="0" width="1" height="1"/><rect x="104" y="0" width="1" height="1"/><rect x="106" y="0" width="1" height="1"/><rect x="108" y="0" width="1" height="1"/><rect x="110" y="0" width="1" height="1"/><rect x="112" y="0" width="1" height="1"/><rect x="114" y="0" width="1" height="1"/><rect x="116" y="0" width="1" height="1"/><rect x="118" y="0" width="1" height="1"/><rect x="120" y="0" width="1" height="1"/><rect x="122" y="0" width="1" height="1"/><rect x="124" y="0" width="1" height="1"/><rect x="126" y="0" width="1" height="1"/><rect x="128" y="0" width="1" height="1"/><rect x="130" y="0" width="1" height="1"/><rect x="132" y="0" width="1" height="1"/><rect x="134" y="0" width="1" height="1"/><rect x="136" y="0" width="1" height="1"/><rect x="138" y="0" width="1" height="1"/><rect x="140" y="0" width="1" height="1"/><rect x="142" y="0" width="1" height="1"/><rect x="144" y="0" width="1" height="1"/><rect x="146" y="0" width="1" height="1"/><rect x="148" y="0" width="1" height="1"/></g></svg></div>
+  <div class="sec-inner">
+    <h2 class="sec-head reveal" id="work-title">where i&rsquo;ve worked...</h2>
+    <ol class="timeline">
+      <li class="job reveal now">
+        <span class="job-pin"><svg viewBox="0 0 11 14" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><rect x="3" y="0" width="5" height="1"/><rect x="1" y="1" width="9" height="1"/><rect x="1" y="2" width="9" height="1"/><rect x="0" y="3" width="4" height="1"/><rect x="7" y="3" width="4" height="1"/><rect x="0" y="4" width="3" height="1"/><rect x="8" y="4" width="3" height="1"/><rect x="0" y="5" width="3" height="1"/><rect x="8" y="5" width="3" height="1"/><rect x="0" y="6" width="4" height="1"/><rect x="7" y="6" width="4" height="1"/><rect x="1" y="7" width="9" height="1"/><rect x="1" y="8" width="9" height="1"/><rect x="2" y="9" width="7" height="1"/><rect x="3" y="10" width="5" height="1"/><rect x="4" y="11" width="3" height="1"/><rect x="4" y="12" width="3" height="1"/><rect x="5" y="13" width="1" height="1"/></svg></span>
+        <p class="job-date">present</p>
+        <h3 class="job-title">gis analyst</h3>
+        <p class="job-org">petrotek engineering corporation &middot; littleton, co</p>
+        <p class="job-desc">i make maps and permit figures for uic injection-well projects along with any other graphic related odds and ends the company needs. i also redesigned and built the company website.</p>
+      </li>
+      <li class="job reveal">
+        <span class="job-pin"><svg viewBox="0 0 11 14" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><rect x="3" y="0" width="5" height="1"/><rect x="1" y="1" width="9" height="1"/><rect x="1" y="2" width="9" height="1"/><rect x="0" y="3" width="4" height="1"/><rect x="7" y="3" width="4" height="1"/><rect x="0" y="4" width="3" height="1"/><rect x="8" y="4" width="3" height="1"/><rect x="0" y="5" width="3" height="1"/><rect x="8" y="5" width="3" height="1"/><rect x="0" y="6" width="4" height="1"/><rect x="7" y="6" width="4" height="1"/><rect x="1" y="7" width="9" height="1"/><rect x="1" y="8" width="9" height="1"/><rect x="2" y="9" width="7" height="1"/><rect x="3" y="10" width="5" height="1"/><rect x="4" y="11" width="3" height="1"/><rect x="4" y="12" width="3" height="1"/><rect x="5" y="13" width="1" height="1"/></svg></span>
+        <p class="job-date">summers of &rsquo;24 and &rsquo;25</p>
+        <h3 class="job-title">gis analyst intern</h3>
+        <p class="job-org">petrotek engineering corporation &middot; littleton, co</p>
+        <p class="job-desc">same thing as what i do now, but for credits at slip.</p>
+      </li>
+      <li class="job reveal">
+        <span class="job-pin"><svg viewBox="0 0 11 14" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><rect x="3" y="0" width="5" height="1"/><rect x="1" y="1" width="9" height="1"/><rect x="1" y="2" width="9" height="1"/><rect x="0" y="3" width="4" height="1"/><rect x="7" y="3" width="4" height="1"/><rect x="0" y="4" width="3" height="1"/><rect x="8" y="4" width="3" height="1"/><rect x="0" y="5" width="3" height="1"/><rect x="8" y="5" width="3" height="1"/><rect x="0" y="6" width="4" height="1"/><rect x="7" y="6" width="4" height="1"/><rect x="1" y="7" width="9" height="1"/><rect x="1" y="8" width="9" height="1"/><rect x="2" y="9" width="7" height="1"/><rect x="3" y="10" width="5" height="1"/><rect x="4" y="11" width="3" height="1"/><rect x="4" y="12" width="3" height="1"/><rect x="5" y="13" width="1" height="1"/></svg></span>
+        <p class="job-date">nov 2022 &ndash; dec 2025</p>
+        <h3 class="job-title">student web developer</h3>
+        <p class="job-org">slippery rock university &middot; slippery rock, pa</p>
+        <p class="job-desc">helped maintain and update sru.edu, including a summer &rsquo;23 internship with the web team.</p>
+      </li>
+      <li class="job reveal">
+        <span class="job-pin"><svg viewBox="0 0 11 14" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><rect x="3" y="0" width="5" height="1"/><rect x="1" y="1" width="9" height="1"/><rect x="1" y="2" width="9" height="1"/><rect x="0" y="3" width="4" height="1"/><rect x="7" y="3" width="4" height="1"/><rect x="0" y="4" width="3" height="1"/><rect x="8" y="4" width="3" height="1"/><rect x="0" y="5" width="3" height="1"/><rect x="8" y="5" width="3" height="1"/><rect x="0" y="6" width="4" height="1"/><rect x="7" y="6" width="4" height="1"/><rect x="1" y="7" width="9" height="1"/><rect x="1" y="8" width="9" height="1"/><rect x="2" y="9" width="7" height="1"/><rect x="3" y="10" width="5" height="1"/><rect x="4" y="11" width="3" height="1"/><rect x="4" y="12" width="3" height="1"/><rect x="5" y="13" width="1" height="1"/></svg></span>
+        <p class="job-date">nov 2021 &ndash; jun 2022</p>
+        <h3 class="job-title">general laborer</h3>
+        <p class="job-org">giordano construction</p>
+        <p class="job-desc">good old-fashioned hard work before heading off to school.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="sec" id="made" aria-labelledby="made-title">
+  <div class="divider" aria-hidden="true"><svg viewBox="0 0 150 1" shape-rendering="crispEdges"><g class="base"><rect x="0" y="0" width="1" height="1"/><rect x="2" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="6" y="0" width="1" height="1"/><rect x="8" y="0" width="1" height="1"/><rect x="10" y="0" width="1" height="1"/><rect x="12" y="0" width="1" height="1"/><rect x="14" y="0" width="1" height="1"/><rect x="16" y="0" width="1" height="1"/><rect x="18" y="0" width="1" height="1"/><rect x="20" y="0" width="1" height="1"/><rect x="22" y="0" width="1" height="1"/><rect x="24" y="0" width="1" height="1"/><rect x="26" y="0" width="1" height="1"/><rect x="28" y="0" width="1" height="1"/><rect x="30" y="0" width="1" height="1"/><rect x="32" y="0" width="1" height="1"/><rect x="34" y="0" width="1" height="1"/><rect x="36" y="0" width="1" height="1"/><rect x="38" y="0" width="1" height="1"/><rect x="40" y="0" width="1" height="1"/><rect x="42" y="0" width="1" height="1"/><rect x="44" y="0" width="1" height="1"/><rect x="46" y="0" width="1" height="1"/><rect x="48" y="0" width="1" height="1"/><rect x="50" y="0" width="1" height="1"/><rect x="52" y="0" width="1" height="1"/><rect x="54" y="0" width="1" height="1"/><rect x="56" y="0" width="1" height="1"/><rect x="58" y="0" width="1" height="1"/><rect x="60" y="0" width="1" height="1"/><rect x="62" y="0" width="1" height="1"/><rect x="64" y="0" width="1" height="1"/><rect x="66" y="0" width="1" height="1"/><rect x="68" y="0" width="1" height="1"/><rect x="70" y="0" width="1" height="1"/><rect x="72" y="0" width="1" height="1"/><rect x="74" y="0" width="1" height="1"/><rect x="76" y="0" width="1" height="1"/><rect x="78" y="0" width="1" height="1"/><rect x="80" y="0" width="1" height="1"/><rect x="82" y="0" width="1" height="1"/><rect x="84" y="0" width="1" height="1"/><rect x="86" y="0" width="1" height="1"/><rect x="88" y="0" width="1" height="1"/><rect x="90" y="0" width="1" height="1"/><rect x="92" y="0" width="1" height="1"/><rect x="94" y="0" width="1" height="1"/><rect x="96" y="0" width="1" height="1"/><rect x="98" y="0" width="1" height="1"/><rect x="100" y="0" width="1" height="1"/><rect x="102" y="0" width="1" height="1"/><rect x="104" y="0" width="1" height="1"/><rect x="106" y="0" width="1" height="1"/><rect x="108" y="0" width="1" height="1"/><rect x="110" y="0" width="1" height="1"/><rect x="112" y="0" width="1" height="1"/><rect x="114" y="0" width="1" height="1"/><rect x="116" y="0" width="1" height="1"/><rect x="118" y="0" width="1" height="1"/><rect x="120" y="0" width="1" height="1"/><rect x="122" y="0" width="1" height="1"/><rect x="124" y="0" width="1" height="1"/><rect x="126" y="0" width="1" height="1"/><rect x="128" y="0" width="1" height="1"/><rect x="130" y="0" width="1" height="1"/><rect x="132" y="0" width="1" height="1"/><rect x="134" y="0" width="1" height="1"/><rect x="136" y="0" width="1" height="1"/><rect x="138" y="0" width="1" height="1"/><rect x="140" y="0" width="1" height="1"/><rect x="142" y="0" width="1" height="1"/><rect x="144" y="0" width="1" height="1"/><rect x="146" y="0" width="1" height="1"/><rect x="148" y="0" width="1" height="1"/></g></svg></div>
+  <div class="sec-inner">
+    <h2 class="sec-head reveal" id="made-title">stuff i&rsquo;ve made...</h2>
+    <ol class="projects">
+      <li class="proj reveal">
+        <span class="proj-num">01</span>
+        <div class="proj-main">
+          <h3 class="proj-title">petrotek website</h3>
+          <p class="proj-sum">a ground-up redesign of my employer&rsquo;s website.</p>
+          <p class="proj-tags"><span>html</span><span>css</span><span>javascript</span></p>
+        </div>
+        <button class="proj-more" type="button" data-proj="petrotek-site" aria-haspopup="dialog">see more <span aria-hidden="true">&rarr;</span></button>
+      </li>
+      <li class="proj reveal">
+        <span class="proj-num">02</span>
+        <div class="proj-main">
+          <h3 class="proj-title">&ldquo;our journey&rdquo; map</h3>
+          <p class="proj-sum">a wedding-gift story map of everywhere my brother and his wife have lived.</p>
+          <p class="proj-tags"><span>arcgis</span><span>illustrator</span><span>cartography</span></p>
+        </div>
+        <button class="proj-more" type="button" data-proj="our-journey" aria-haspopup="dialog">see more <span aria-hidden="true">&rarr;</span></button>
+      </li>
+      <li class="proj reveal">
+        <span class="proj-num">03</span>
+        <div class="proj-main">
+          <h3 class="proj-title">a tale of two ales</h3>
+          <p class="proj-sum">an interactive website built entirely around an inside joke.</p>
+          <p class="proj-tags"><span>javascript</span><span>css</span><span>vercel</span></p>
+        </div>
+        <button class="proj-more" type="button" data-proj="two-ales" aria-haspopup="dialog">see more <span aria-hidden="true">&rarr;</span></button>
+      </li>
+      <li class="proj reveal">
+        <span class="proj-num">04</span>
+        <div class="proj-main">
+          <h3 class="proj-title">fpv drone</h3>
+          <p class="proj-sum">a first-person-view drone i designed, printed, wired and tuned myself.</p>
+          <p class="proj-tags"><span>autocad</span><span>3d printing</span><span>betaflight</span></p>
+        </div>
+        <button class="proj-more" type="button" data-proj="fpv-drone" aria-haspopup="dialog">see more <span aria-hidden="true">&rarr;</span></button>
+      </li>
+      <li class="proj reveal">
+        <span class="proj-num">05</span>
+        <div class="proj-main">
+          <h3 class="proj-title">this website</h3>
+          <p class="proj-sum">the site you&rsquo;re on, with a live pixel map behind it.</p>
+          <p class="proj-tags"><span>html</span><span>css</span><span>javascript</span></p>
+        </div>
+        <button class="proj-more" type="button" data-proj="this-site" aria-haspopup="dialog">see more <span aria-hidden="true">&rarr;</span></button>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="sec contact" id="contact" aria-labelledby="contact-title">
+  <div class="divider" aria-hidden="true"><svg viewBox="0 0 150 1" shape-rendering="crispEdges"><g class="base"><rect x="0" y="0" width="1" height="1"/><rect x="2" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="6" y="0" width="1" height="1"/><rect x="8" y="0" width="1" height="1"/><rect x="10" y="0" width="1" height="1"/><rect x="12" y="0" width="1" height="1"/><rect x="14" y="0" width="1" height="1"/><rect x="16" y="0" width="1" height="1"/><rect x="18" y="0" width="1" height="1"/><rect x="20" y="0" width="1" height="1"/><rect x="22" y="0" width="1" height="1"/><rect x="24" y="0" width="1" height="1"/><rect x="26" y="0" width="1" height="1"/><rect x="28" y="0" width="1" height="1"/><rect x="30" y="0" width="1" height="1"/><rect x="32" y="0" width="1" height="1"/><rect x="34" y="0" width="1" height="1"/><rect x="36" y="0" width="1" height="1"/><rect x="38" y="0" width="1" height="1"/><rect x="40" y="0" width="1" height="1"/><rect x="42" y="0" width="1" height="1"/><rect x="44" y="0" width="1" height="1"/><rect x="46" y="0" width="1" height="1"/><rect x="48" y="0" width="1" height="1"/><rect x="50" y="0" width="1" height="1"/><rect x="52" y="0" width="1" height="1"/><rect x="54" y="0" width="1" height="1"/><rect x="56" y="0" width="1" height="1"/><rect x="58" y="0" width="1" height="1"/><rect x="60" y="0" width="1" height="1"/><rect x="62" y="0" width="1" height="1"/><rect x="64" y="0" width="1" height="1"/><rect x="66" y="0" width="1" height="1"/><rect x="68" y="0" width="1" height="1"/><rect x="70" y="0" width="1" height="1"/><rect x="72" y="0" width="1" height="1"/><rect x="74" y="0" width="1" height="1"/><rect x="76" y="0" width="1" height="1"/><rect x="78" y="0" width="1" height="1"/><rect x="80" y="0" width="1" height="1"/><rect x="82" y="0" width="1" height="1"/><rect x="84" y="0" width="1" height="1"/><rect x="86" y="0" width="1" height="1"/><rect x="88" y="0" width="1" height="1"/><rect x="90" y="0" width="1" height="1"/><rect x="92" y="0" width="1" height="1"/><rect x="94" y="0" width="1" height="1"/><rect x="96" y="0" width="1" height="1"/><rect x="98" y="0" width="1" height="1"/><rect x="100" y="0" width="1" height="1"/><rect x="102" y="0" width="1" height="1"/><rect x="104" y="0" width="1" height="1"/><rect x="106" y="0" width="1" height="1"/><rect x="108" y="0" width="1" height="1"/><rect x="110" y="0" width="1" height="1"/><rect x="112" y="0" width="1" height="1"/><rect x="114" y="0" width="1" height="1"/><rect x="116" y="0" width="1" height="1"/><rect x="118" y="0" width="1" height="1"/><rect x="120" y="0" width="1" height="1"/><rect x="122" y="0" width="1" height="1"/><rect x="124" y="0" width="1" height="1"/><rect x="126" y="0" width="1" height="1"/><rect x="128" y="0" width="1" height="1"/><rect x="130" y="0" width="1" height="1"/><rect x="132" y="0" width="1" height="1"/><rect x="134" y="0" width="1" height="1"/><rect x="136" y="0" width="1" height="1"/><rect x="138" y="0" width="1" height="1"/><rect x="140" y="0" width="1" height="1"/><rect x="142" y="0" width="1" height="1"/><rect x="144" y="0" width="1" height="1"/><rect x="146" y="0" width="1" height="1"/><rect x="148" y="0" width="1" height="1"/></g></svg></div>
+  <div class="sec-inner">
+    <h2 class="sec-head reveal" id="contact-title">come say hi...</h2>
+    <div class="contact-mail reveal">
+      <svg class="contact-pin" viewBox="0 0 11 14" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><rect x="3" y="0" width="5" height="1"/><rect x="1" y="1" width="9" height="1"/><rect x="1" y="2" width="9" height="1"/><rect x="0" y="3" width="4" height="1"/><rect x="7" y="3" width="4" height="1"/><rect x="0" y="4" width="3" height="1"/><rect x="8" y="4" width="3" height="1"/><rect x="0" y="5" width="3" height="1"/><rect x="8" y="5" width="3" height="1"/><rect x="0" y="6" width="4" height="1"/><rect x="7" y="6" width="4" height="1"/><rect x="1" y="7" width="9" height="1"/><rect x="1" y="8" width="9" height="1"/><rect x="2" y="9" width="7" height="1"/><rect x="3" y="10" width="5" height="1"/><rect x="4" y="11" width="3" height="1"/><rect x="4" y="12" width="3" height="1"/><rect x="5" y="13" width="1" height="1"/></svg>
+      <a href="mailto:cjmax88@gmail.com">cjmax88@gmail.com</a>
+      <button class="copy" id="copyMail" type="button">copy</button>
+    </div>
+    <ul class="contact-links reveal">
+      <li><a href="https://www.linkedin.com/in/connor-maxwell-212184273/" target="_blank" rel="noopener">linkedin &#8599;</a></li>
+      <li><a href="https://github.com/cmax88" target="_blank" rel="noopener">github &#8599;</a></li>
+    </ul>
+  </div>
+</section>
+
+<footer class="foot">&copy; <span id="yr">2026</span> connor maxwell &middot; hand-built in html, css &amp; javascript</footer>
+
+<!-- ============ PROJECT MODAL ============ -->
+<dialog class="modal" id="projModal" aria-labelledby="modal-title">
+  <button class="modal-close" type="button" aria-label="Close">&times;</button>
+  <div class="modal-content" id="modalContent"></div>
+</dialog>
+<!-- project write-ups: edit the text inside each template -->
+<template id="proj-petrotek-site">
+  <div class="modal-art"><svg class="icon"  viewBox="0 0 14 12" shape-rendering="crispEdges" aria-hidden="true"><rect x="0" y="0" width="14" height="1"/><rect x="0" y="1" width="1" height="1"/><rect x="13" y="1" width="1" height="1"/><rect class="hi" x="1" y="1" width="1" height="1"/><rect class="hi" x="3" y="1" width="1" height="1"/><rect class="hi" x="5" y="1" width="1" height="1"/><rect x="0" y="2" width="14" height="1"/><rect x="0" y="3" width="1" height="1"/><rect x="13" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="13" y="4" width="1" height="1"/><rect class="hi" x="2" y="4" width="6" height="1"/><rect x="0" y="5" width="1" height="1"/><rect x="13" y="5" width="1" height="1"/><rect class="hi" x="2" y="5" width="4" height="1"/><rect x="0" y="6" width="1" height="1"/><rect x="13" y="6" width="1" height="1"/><rect x="0" y="7" width="1" height="1"/><rect x="2" y="7" width="4" height="1"/><rect x="8" y="7" width="4" height="1"/><rect x="13" y="7" width="1" height="1"/><rect x="0" y="8" width="1" height="1"/><rect x="2" y="8" width="1" height="1"/><rect x="5" y="8" width="1" height="1"/><rect x="8" y="8" width="1" height="1"/><rect x="11" y="8" width="1" height="1"/><rect x="13" y="8" width="1" height="1"/><rect x="0" y="9" width="1" height="1"/><rect x="2" y="9" width="4" height="1"/><rect x="8" y="9" width="4" height="1"/><rect x="13" y="9" width="1" height="1"/><rect x="0" y="10" width="1" height="1"/><rect x="13" y="10" width="1" height="1"/><rect x="0" y="11" width="14" height="1"/></svg></div>
+  <h3 class="modal-title" id="modal-title">petrotek website</h3>
+  <p class="proj-tags"><span>html</span><span>css</span><span>javascript</span></p>
+  <div class="modal-body">
+        <p>when i started at petrotek, the company website was due for a refresh, so i took it on. i redesigned it from the ground up: the layout, how the content is organized, and the front-end build itself.</p>
+        <p>it was a good chance to bring my web dev experience from slip into my gis job, and to make something the whole company uses.</p>
+        <!-- TODO: add what changed, what it was built with, and a link if it's public -->
+  </div>
+</template>
+<template id="proj-our-journey">
+  <div class="modal-art"><svg class="icon"  viewBox="0 0 14 12" shape-rendering="crispEdges" aria-hidden="true"><rect x="2" y="0" width="2" height="1"/><rect x="8" y="0" width="2" height="1"/><rect x="1" y="1" width="1" height="1"/><rect x="4" y="1" width="1" height="1"/><rect x="7" y="1" width="1" height="1"/><rect x="10" y="1" width="1" height="1"/><rect x="0" y="2" width="1" height="1"/><rect x="5" y="2" width="2" height="1"/><rect x="11" y="2" width="1" height="1"/><rect x="0" y="3" width="1" height="1"/><rect x="5" y="3" width="2" height="1"/><rect x="11" y="3" width="1" height="1"/><rect class="hi" x="3" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="5" y="4" width="2" height="1"/><rect x="11" y="4" width="1" height="1"/><rect class="hi" x="2" y="4" width="1" height="1"/><rect class="hi" x="8" y="4" width="1" height="1"/><rect x="0" y="5" width="1" height="1"/><rect x="5" y="5" width="2" height="1"/><rect x="11" y="5" width="1" height="1"/><rect class="hi" x="3" y="5" width="1" height="1"/><rect class="hi" x="8" y="5" width="1" height="1"/><rect x="0" y="6" width="1" height="1"/><rect x="5" y="6" width="2" height="1"/><rect x="11" y="6" width="1" height="1"/><rect class="hi" x="4" y="6" width="1" height="1"/><rect class="hi" x="7" y="6" width="1" height="1"/><rect x="0" y="7" width="1" height="1"/><rect x="5" y="7" width="2" height="1"/><rect x="11" y="7" width="1" height="1"/><rect x="0" y="8" width="1" height="1"/><rect x="5" y="8" width="2" height="1"/><rect class="hi" x="9" y="8" width="3" height="1"/><rect x="0" y="9" width="1" height="1"/><rect x="5" y="9" width="2" height="1"/><rect class="hi" x="9" y="9" width="1" height="1"/><rect class="hi" x="11" y="9" width="1" height="1"/><rect x="1" y="10" width="1" height="1"/><rect x="4" y="10" width="1" height="1"/><rect x="7" y="10" width="1" height="1"/><rect class="hi" x="10" y="10" width="1" height="1"/><rect x="2" y="11" width="2" height="1"/><rect x="8" y="11" width="2" height="1"/></svg></div>
+  <h3 class="modal-title" id="modal-title">&ldquo;our journey&rdquo; map</h3>
+  <p class="proj-tags"><span>arcgis</span><span>illustrator</span><span>cartography</span></p>
+  <div class="modal-body">
+        <p>for my brother&rsquo;s wedding, i made a map of every place he and his wife have lived together, connected in order like a route, so guests could follow their story.</p>
+        <p>i built the basemap and placed the points in arcgis, then brought it into illustrator to hand-draw the paths and custom symbols so it felt more personal than a standard gis export.</p>
+  </div>
+</template>
+<template id="proj-two-ales">
+  <div class="modal-art"><svg class="icon"  viewBox="0 0 14 12" shape-rendering="crispEdges" aria-hidden="true"><rect class="hi" x="2" y="0" width="6" height="1"/><rect class="hi" x="1" y="1" width="8" height="1"/><rect x="1" y="2" width="8" height="1"/><rect x="1" y="3" width="1" height="1"/><rect x="4" y="3" width="1" height="1"/><rect x="8" y="3" width="5" height="1"/><rect x="1" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="8" y="4" width="1" height="1"/><rect x="12" y="4" width="1" height="1"/><rect x="1" y="5" width="1" height="1"/><rect x="4" y="5" width="1" height="1"/><rect x="8" y="5" width="1" height="1"/><rect x="12" y="5" width="1" height="1"/><rect x="1" y="6" width="1" height="1"/><rect x="8" y="6" width="1" height="1"/><rect x="12" y="6" width="1" height="1"/><rect x="1" y="7" width="1" height="1"/><rect x="3" y="7" width="1" height="1"/><rect x="8" y="7" width="5" height="1"/><rect x="1" y="8" width="1" height="1"/><rect x="4" y="8" width="1" height="1"/><rect x="8" y="8" width="1" height="1"/><rect x="1" y="9" width="1" height="1"/><rect x="8" y="9" width="1" height="1"/><rect x="1" y="10" width="8" height="1"/><rect x="2" y="11" width="6" height="1"/></svg></div>
+  <h3 class="modal-title" id="modal-title">a tale of two ales</h3>
+  <p class="proj-tags"><span>javascript</span><span>css</span><span>vercel</span></p>
+  <div class="modal-body">
+        <p>a completely ridiculous website built around an inside joke with my friends. it&rsquo;s interactive, made with plain javascript and css, and hosted on vercel.</p>
+        <p>making something silly turned out to be a great way to actually learn javascript, since i kept wanting to add one more dumb feature.</p>
+        <p class="modal-links"><a href="https://www.myfrienddrankabeerandthendrankanotherbeer.college/" target="_blank" rel="noopener">visit the site &#8599;</a><a href="https://github.com/cmax88/A-Tale-of-Two-Ales" target="_blank" rel="noopener">see the code &#8599;</a></p>
+  </div>
+</template>
+<template id="proj-fpv-drone">
+  <div class="modal-art"><svg class="icon"  viewBox="0 0 14 12" shape-rendering="crispEdges" aria-hidden="true"><rect class="hi" x="0" y="0" width="3" height="1"/><rect class="hi" x="11" y="0" width="3" height="1"/><rect x="1" y="1" width="1" height="1"/><rect x="12" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="11" y="2" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="10" y="3" width="1" height="1"/><rect x="4" y="4" width="6" height="1"/><rect x="4" y="5" width="1" height="1"/><rect x="9" y="5" width="1" height="1"/><rect class="hi" x="5" y="5" width="4" height="1"/><rect x="4" y="6" width="1" height="1"/><rect x="9" y="6" width="1" height="1"/><rect class="hi" x="5" y="6" width="4" height="1"/><rect x="4" y="7" width="6" height="1"/><rect x="3" y="8" width="1" height="1"/><rect x="10" y="8" width="1" height="1"/><rect x="2" y="9" width="1" height="1"/><rect x="11" y="9" width="1" height="1"/><rect x="1" y="10" width="1" height="1"/><rect x="12" y="10" width="1" height="1"/><rect class="hi" x="0" y="11" width="3" height="1"/><rect class="hi" x="11" y="11" width="3" height="1"/></svg></div>
+  <h3 class="modal-title" id="modal-title">fpv drone</h3>
+  <p class="proj-tags"><span>autocad</span><span>3d printing</span><span>betaflight</span></p>
+  <div class="modal-body">
+        <p>i built an fpv drone from scratch. i modeled the frame and parts in autocad, sliced them in flashprint and 3d printed them, then wired everything up.</p>
+        <p>the flight controller is configured and tuned in betaflight. i&rsquo;m also a licensed commercial drone pilot, so building one myself felt like the natural next step.</p>
+  </div>
+</template>
+<template id="proj-this-site">
+  <div class="modal-art"><svg class="icon"  viewBox="0 0 14 12" shape-rendering="crispEdges" aria-hidden="true"><rect x="3" y="1" width="8" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="11" y="2" width="1" height="1"/><rect x="1" y="3" width="1" height="1"/><rect x="4" y="3" width="6" height="1"/><rect x="12" y="3" width="1" height="1"/><rect x="1" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="10" y="4" width="1" height="1"/><rect x="12" y="4" width="1" height="1"/><rect x="1" y="5" width="1" height="1"/><rect x="3" y="5" width="1" height="1"/><rect x="10" y="5" width="1" height="1"/><rect x="12" y="5" width="1" height="1"/><rect class="hi" x="6" y="5" width="2" height="1"/><rect x="1" y="6" width="1" height="1"/><rect x="3" y="6" width="1" height="1"/><rect x="10" y="6" width="1" height="1"/><rect x="12" y="6" width="1" height="1"/><rect class="hi" x="6" y="6" width="2" height="1"/><rect x="1" y="7" width="1" height="1"/><rect x="3" y="7" width="1" height="1"/><rect x="10" y="7" width="1" height="1"/><rect x="12" y="7" width="1" height="1"/><rect x="1" y="8" width="1" height="1"/><rect x="4" y="8" width="6" height="1"/><rect x="12" y="8" width="1" height="1"/><rect x="2" y="9" width="1" height="1"/><rect x="11" y="9" width="1" height="1"/><rect x="3" y="10" width="8" height="1"/></svg></div>
+  <h3 class="modal-title" id="modal-title">this website</h3>
+  <p class="proj-tags"><span>html</span><span>css</span><span>javascript</span></p>
+  <div class="modal-body">
+        <p>the map behind this page isn&rsquo;t an image. it&rsquo;s generated live in the browser from fractal noise, split into elevation bands, and drawn as pixel contour lines. it slowly drifts, and the land rises wherever you move your cursor.</p>
+        <p>everything is plain html, css and javascript in a single file, with no libraries or frameworks.</p>
+        <p class="modal-links"><a href="https://github.com/cmax88" target="_blank" rel="noopener">github &#8599;</a></p>
+  </div>
+</template>
+
+
+
+<script>
+
+
+
+/* ================= BLACKLIGHT TERRAIN MAP =================
+   Fractal value noise -> elevation zones + contour lines,
+   rendered at low resolution and scaled up. Fills are near-black,
+   contours are fluorescent, and a blurred copy adds UV bloom.
+   The terrain drifts slowly and rises under the cursor. */
+(() => {
+  const cv = document.getElementById('world'), ctx = cv.getContext('2d');
+  const gl = document.getElementById('glow'), gctx = gl.getContext('2d');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const PX = 6;          // screen pixels per map pixel
+  const SC = 0.0036;     // noise scale (smaller = bigger landforms)
+  const DL = 0.03;       // contour interval
+  const SIG2 = 2 * 110 * 110; // cursor hill radius
+
+  // --- seeded value noise ---
+  const perm = new Uint8Array(512);
+  let s = 4242;
+  for (let i = 0; i < 256; i++) perm[i] = i;
+  for (let i = 255; i > 0; i--) { s = (s * 16807) % 2147483647; const j = s % (i + 1); const t = perm[i]; perm[i] = perm[j]; perm[j] = t; }
+  for (let i = 0; i < 256; i++) perm[i + 256] = perm[i];
+  const hash = (i, j) => perm[(i & 255) + perm[j & 255]] / 255;
+  function noise(x, y) {
+    const xi = Math.floor(x), yi = Math.floor(y), xf = x - xi, yf = y - yi;
+    const u = xf * xf * (3 - 2 * xf), v = yf * yf * (3 - 2 * yf);
+    const a = hash(xi, yi), b = hash(xi + 1, yi), c = hash(xi, yi + 1), d = hash(xi + 1, yi + 1);
+    return a + (b - a) * u + (c - a) * v + (a - b - c + d) * u * v;
+  }
+  const fbm = (x, y) => (noise(x, y) * .5 + noise(x * 2.03 + 17, y * 2.03 + 9) * .25 + noise(x * 4.1 + 3, y * 4.1 + 41) * .125) / .875;
+
+  // --- elevation zones: [upper bound, name, fill rgb, fluorescent line rgb] ---
+  const ZONES = [
+    [0.40, 'Deep Sea',  [2, 10, 12],  [18, 66, 76]],
+    [0.45, 'Shallows',  [3, 12, 14],  [22, 90, 96]],
+    [0.48, 'Beach',     [3, 14, 16],  [28, 114, 114]],
+    [0.57, 'Plains',    [4, 16, 18],  [38, 140, 134]],
+    [0.65, 'Forest',    [5, 18, 20],  [52, 164, 154]],
+    [0.73, 'Hills',     [6, 20, 22],  [78, 190, 176]],
+    [0.81, 'Mountains', [7, 23, 25],  [118, 212, 196]],
+    [9.99, 'Peaks',     [9, 27, 29],  [178, 238, 226]]
+  ];
+  const zoneOf = v => { for (let z = 0; z < ZONES.length; z++) if (v < ZONES[z][0]) return z; return ZONES.length - 1; };
+
+  const m = { x: -9999, y: -9999, tx: -9999, ty: -9999, a: 0, ta: 0 };
+  let t = 0, cols = 0, rows = 0, img, field, band;
+
+  const sample = (x, y) => {
+    let v = fbm(x * SC + t * 0.02, y * SC + t * 0.012);
+    if (m.a > 0.001) { const dx = x - m.x, dy = y - m.y; v += m.a * 0.26 * Math.exp(-(dx * dx + dy * dy) / SIG2); }
+    return v;
+  };
+
+  function resize() {
+    cols = Math.ceil(innerWidth / PX) + 1; rows = Math.ceil(innerHeight / PX) + 1;
+    for (const c of [cv, gl]) { c.width = cols; c.height = rows; c.style.width = cols * PX + 'px'; c.style.height = rows * PX + 'px'; }
+    img = ctx.createImageData(cols, rows);
+    field = new Float32Array(cols * rows); band = new Int16Array(cols * rows);
+    draw();
+  }
+
+  function draw() {
+    if (!cols) return;
+    for (let j = 0; j < rows; j++) for (let i = 0; i < cols; i++) {
+      const v = sample(i * PX, j * PX), k = j * cols + i;
+      field[k] = v; band[k] = Math.floor(v / DL);
+    }
+    const d = img.data;
+    for (let j = 0; j < rows; j++) for (let i = 0; i < cols; i++) {
+      const k = j * cols + i, b = band[k], Z = ZONES[zoneOf(field[k])];
+      const br = i < cols - 1 ? band[k + 1] : b, bd = j < rows - 1 ? band[k + cols] : b;
+      let r, g, bl;
+      if (br !== b || bd !== b) {                           // fluorescent contour
+        const lo = Math.max(b, br, bd), L = Z[3];
+        const f = (lo % 5 === 0) ? 0.5 : 0.24;                 // index contours at full brightness
+        r = L[0] * f; g = L[1] * f; bl = L[2] * f;
+      } else {                                              // dark fill, faint banding
+        const F = Z[2], f = (b & 1) ? 1 : 0.7;
+        r = F[0] * f; g = F[1] * f; bl = F[2] * f;
+      }
+      const o = k * 4;
+      d[o] = r; d[o + 1] = g; d[o + 2] = bl; d[o + 3] = 255;
+    }
+    ctx.putImageData(img, 0, 0);
+    gctx.clearRect(0, 0, cols, rows); gctx.drawImage(cv, 0, 0);   // bloom layer
+  }
+
+  // --- cursor raises the land ---
+  addEventListener('pointermove', e => {
+    if (m.tx < -9000) { m.x = e.clientX; m.y = e.clientY; }
+    m.tx = e.clientX; m.ty = e.clientY; m.ta = 1;
+  }, { passive: true });
+  document.addEventListener('pointerleave', () => { m.ta = 0; });
+
+  // --- ~20 fps loop ---
+  let last = 0;
+  function loop(ts) {
+    requestAnimationFrame(loop);
+    if (document.hidden || ts - last < 50) return;
+    last = ts;
+    const moving = Math.abs(m.ta - m.a) > 0.005 || Math.abs(m.tx - m.x) > 0.5 || Math.abs(m.ty - m.y) > 0.5;
+    if (reduce && !moving) return;
+    if (!reduce) t += 0.03;
+    m.x += (m.tx - m.x) * 0.2; m.y += (m.ty - m.y) * 0.2; m.a += (m.ta - m.a) * 0.1;
+    draw();
+  }
+
+  addEventListener('resize', resize);
+  resize();
+  requestAnimationFrame(loop);
+})();
+</script>
+<script>
+/* fade bio paragraphs in as they scroll into view */
+(() => {
+  const ps = document.querySelectorAll('.divider, .about-head, .about-inner p, .about-photo, .reveal');
+  if (!('IntersectionObserver' in window)) { ps.forEach(p => p.classList.add('in')); return; }
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .2 });
+  ps.forEach(p => { const sib = [...p.parentElement.children].indexOf(p); p.style.transitionDelay = (Math.min(sib, 5) * 0.1) + 's'; io.observe(p); });
+})();
+</script>
+<script>
+/* project "see more" modal */
+(() => {
+  const dlg = document.getElementById('projModal'), box = document.getElementById('modalContent');
+  if (!dlg) return;
+  let opener = null;
+  document.querySelectorAll('.proj-more').forEach(btn => btn.addEventListener('click', () => {
+    const tpl = document.getElementById('proj-' + btn.dataset.proj);
+    if (!tpl) return;
+    box.replaceChildren(tpl.content.cloneNode(true));
+    opener = btn;
+    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', '');
+    document.body.style.overflow = 'hidden';
+  }));
+  const close = () => dlg.close ? dlg.close() : dlg.removeAttribute('open');
+  dlg.querySelector('.modal-close').addEventListener('click', close);
+  dlg.addEventListener('click', e => { if (e.target === dlg) close(); });   // click outside the window
+  dlg.addEventListener('close', () => { document.body.style.overflow = ''; if (opener) opener.focus(); });
+})();
+</script>
+<script>
+/* contact: copy email + footer year */
+(() => {
+  const btn = document.getElementById('copyMail'), mail = 'cjmax88@gmail.com';
+  btn.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(mail); btn.textContent = 'copied!'; }
+    catch (e) { btn.textContent = 'press ctrl+c'; const r = document.createRange(); r.selectNodeContents(btn.previousElementSibling); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); }
+    clearTimeout(btn._t); btn._t = setTimeout(() => btn.textContent = 'copy', 1800);
+  });
+  document.getElementById('yr').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
 </html>
